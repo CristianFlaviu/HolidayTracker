@@ -16,7 +16,6 @@ const routes: Routes = [{path: 'login', component: LoginComponent},
       RouterModule
    ],
    declarations: [
-      EnumToStringPipe
    ]
 })
 export class AuthentificationRoutingModule { }

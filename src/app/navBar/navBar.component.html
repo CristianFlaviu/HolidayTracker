@@ -5,9 +5,9 @@
     
       <div style="margin-left: auto;" layout-align="end center">
      
-      <a  style="font-size: 20px;" mat-button  [routerLink]='["/auth/login"]'> Login </a>
-      <a  style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Register </a>
-   
+      <a *ngIf="!authService.isLoggedIn()"style="font-size: 20px;" mat-button  [routerLink]='["/auth/login"]'> Login </a>
+      <a *ngIf="!authService.isLoggedIn()" style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Register </a>
+      <a  (click)="logOut()" *ngIf="authService.isLoggedIn()"  style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Logout </a>
    
       </div>
      </mat-toolbar>

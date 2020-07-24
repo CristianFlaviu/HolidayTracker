@@ -31,7 +31,7 @@ import { EnumToStringPipe } from './authentification/enumToString.pipe';
       MatCardModule,
       MatFormFieldModule
    ],
-   providers: [EnumToStringPipe],
+   providers: [],
    bootstrap: [
       AppComponent
    ]

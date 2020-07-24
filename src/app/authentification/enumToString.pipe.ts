@@ -7,7 +7,7 @@ export class EnumToStringPipe implements PipeTransform {
 
   transform(data) {
     const keys = Object.keys(data);
-    return keys.slice(keys.length / 2);
+    return keys.slice(keys.length / 2 - 1, keys.length);
   }
 
 }

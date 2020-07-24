@@ -12,10 +12,12 @@ import {MatInputModule } from '@angular/material/input';
 import {AuthService} from './auth.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import { EnumToStringPipe } from './enumToString.pipe';
 
 @NgModule({
   declarations: [LoginComponent,
-                 RegisterComponent],
+                 RegisterComponent,
+                 EnumToStringPipe],
   imports: [
     CommonModule,
     AuthentificationRoutingModule,
@@ -26,6 +28,6 @@ import {MatSelectModule} from '@angular/material/select';
     MatSnackBarModule,
     MatSelectModule
   ],
-  providers: [AuthService]
+  providers: [AuthService,]
 })
 export class AuthentificationModule { }

@@ -1,4 +1,4 @@
-<mat-card >
+<mat-card style="width: 28%;" >
   <mat-card-title>Register</mat-card-title>
 <mat-card-content >
 <form [formGroup] = "form" >
@@ -20,7 +20,7 @@
   <mat-form-field  >
     <mat-label>Teams</mat-label>
     <mat-select formControlName="team">
-      <mat-option *ngFor="let item of workTeams"  [value] = "item">
+      <mat-option *ngFor="let item of workTeams | enumToString"  [value] = "item">
         {{item}}
       </mat-option>
     </mat-select>
