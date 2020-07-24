@@ -28,6 +28,8 @@ export class HolidayListComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
 
+    console.log(this.authService.listUser);
+
   }
 
   applyFilter(filterValue: string): void {

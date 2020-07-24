@@ -1,0 +1,26 @@
+.moveCenter{
+    margin-left: 40%;
+    margin-right: auto;
+    margin-top: 4%;
+
+}
+
+
+.mat-form-field {
+
+    width: 100%;
+    min-width: 250px;
+  }
+  
+  mat-card-title,
+  mat-card-content {
+   
+    display: flex;
+
+  }
+  mat-card{
+      margin-top: 7%;
+      margin-left: 37%;
+      width: 30%;
+  }
+

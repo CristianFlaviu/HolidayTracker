@@ -14,12 +14,16 @@ import {MatSelectModule} from '@angular/material/select';
 import { AllHolidayListComponent } from './allHolidayList/allHolidayList.component';
 import { HolidayListComponent } from './holidayList/holidayList.component';
 import { MatTableModule } from '@angular/material/table';
-
+import {CreateEditHolidayComponent} from './create-edit-Holiday/create-edit-Holiday.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AllHolidayListComponent,
-                HolidayListComponent],
+                HolidayListComponent,
+                CreateEditHolidayComponent],
   imports: [
     CommonModule,
     HolidayRoutingModule,
@@ -31,7 +35,10 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatInputModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule
   ]
 })
 export class HolidayModule { }

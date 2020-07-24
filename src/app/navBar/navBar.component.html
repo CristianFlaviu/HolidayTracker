@@ -1,12 +1,12 @@
 <div class="topnav"  >
   <mat-toolbar color="primary"  >
       <a   [routerLink]='["/home"]'>Holiday Tracker </a>
-
     
       <div style="margin-left: auto;" layout-align="end center">
 
-      <a style="font-size: 20px;" mat-button  [routerLink]='["/holiday/all"]'> HolidayAll </a>
-      <a style="font-size: 20px;" mat-button  [routerLink]='["/holiday/colleagues"]'> Colleagues </a>
+      <a *ngIf="authService.isLoggedIn() && authService.getLoggedInUser().userType === 'Admin'"style="font-size: 20px;" mat-button  [routerLink]='["/holiday/all"]'> HolidayAll </a>
+      <a *ngIf="authService.isLoggedIn()"  style="font-size: 20px;" mat-button  [routerLink]='["/holiday/colleagues"]'> Colleagues </a>
+      <a *ngIf="authService.isLoggedIn()"style="font-size: 20px;" mat-button  [routerLink]='["/holiday/create"]'> New Holiday </a>
       <a *ngIf="!authService.isLoggedIn()"style="font-size: 20px;" mat-button  [routerLink]='["/auth/login"]'> Login </a>
       <a *ngIf="!authService.isLoggedIn()" style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Register </a>
       <a  (click)="logOut()" *ngIf="authService.isLoggedIn()"  style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Logout </a>

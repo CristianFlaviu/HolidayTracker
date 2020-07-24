@@ -16,12 +16,12 @@ public IoanaHoliday = new  Holiday(new Date(2020, 4, 5), new Date(2020, 4,  10))
 public TonyHoliday = new  Holiday(new Date(2020, 4, 5), new Date(2020, 4,  10));
 
 
-public listUser: User[] = [new User('Tony', '123'),
+public listUser: User[] = [new User('Tony', '123', UserTypes.Admin),
                     new User('Flaviu', '123'),
                     new User('Ema', '123'),
                     new User('Ioana', '123', UserTypes.NormalUser, WorkTeams.Hr,this.IoanaHoliday)];
 
-login(username: string, password: string): boolean
+public login(username: string, password: string): boolean
 {
   for (const user of this.listUser )
   {
@@ -36,7 +36,7 @@ login(username: string, password: string): boolean
   return false;
 }
 
-register(user: User): boolean
+public register(user: User): boolean
 {
   if (this.listUser.filter(a => a.username === user.username).length > 0)
   {
@@ -46,7 +46,7 @@ register(user: User): boolean
   return true;
 }
 
-logOut(): boolean
+public logOut(): boolean
 {
   if (this.isLoggedIn)
   {
@@ -57,17 +57,25 @@ logOut(): boolean
   }
   return false;
 }
-isLoggedIn(): boolean
+public isLoggedIn(): boolean
 {
   return (localStorage.getItem('username') != null);
 }
 
-getLoggedInUser()
+public getLoggedInUser(): User
 {
   return this.getUser(localStorage.getItem('username'));
 }
-getUser(username: string): User
+public getUser(username: string): User
 {
   return this.listUser.find(a => a.username === username);
 }
+
+public addHoliday(holiday: Holiday): void
+{
+  const user = this.getLoggedInUser();
+  user.holiday = holiday;
+  holiday.user = user;
+}
+
 }
