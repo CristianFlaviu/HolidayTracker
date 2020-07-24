@@ -9,7 +9,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule } from '@angular/material/input';
-
+import {AuthService} from './auth.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [LoginComponent,
@@ -21,6 +23,9 @@ import {MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-  ]
+    MatSnackBarModule,
+    MatSelectModule
+  ],
+  providers: [AuthService]
 })
 export class AuthentificationModule { }

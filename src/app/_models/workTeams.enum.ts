@@ -1,5 +1,5 @@
 export enum WorkTeams {
-    Hr,
-    QA,
-    Dev
+    Hr = 'Human Resources',
+    QA = 'Quality Asurance',
+    Dev = 'Developers'
 }

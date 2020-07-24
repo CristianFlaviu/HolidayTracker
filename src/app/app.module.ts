@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { EnumToStringPipe } from './authentification/enumToString.pipe';
 
 @NgModule({
    declarations: [
@@ -30,7 +31,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       MatCardModule,
       MatFormFieldModule
    ],
-   providers: [],
+   providers: [EnumToStringPipe],
    bootstrap: [
       AppComponent
    ]
