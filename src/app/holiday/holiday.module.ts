@@ -18,12 +18,15 @@ import {CreateEditHolidayComponent} from './create-edit-Holiday/create-edit-Holi
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-
+import {CreateHolidayComponent } from './createHoliday/createHoliday.component';
+import {EditHolidayComponent} from './editHoliday/editHoliday.component';
 
 @NgModule({
   declarations: [AllHolidayListComponent,
                 HolidayListComponent,
-                CreateEditHolidayComponent],
+                CreateEditHolidayComponent,
+                CreateHolidayComponent,
+                EditHolidayComponent],
   imports: [
     CommonModule,
     HolidayRoutingModule,

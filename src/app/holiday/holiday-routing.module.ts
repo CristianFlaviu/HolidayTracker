@@ -3,9 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {HolidayListComponent} from './holidayList/holidayList.component';
 import {AllHolidayListComponent} from './allHolidayList/allHolidayList.component';
 import { CreateEditHolidayComponent } from './create-edit-Holiday/create-edit-Holiday.component';
+import { CreateHolidayComponent } from './createHoliday/createHoliday.component';
+import { EditHolidayComponent } from './editHoliday/editHoliday.component';
+
 const routes: Routes = [{path: 'colleagues', component: HolidayListComponent },
                         {path: 'all', component: AllHolidayListComponent},
-                        {path: 'create', component: CreateEditHolidayComponent }
+                        {path: 'create', component: CreateHolidayComponent },
+                        {path: 'edit', component: EditHolidayComponent}
                        ];
 
 @NgModule({

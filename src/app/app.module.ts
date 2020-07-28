@@ -12,14 +12,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { EnumToStringPipe } from './authentification/enumToString.pipe';
+import {EnumToStringPipe } from './authentification/enumToString.pipe';
+import {CreateHolidayComponent} from './holiday/createHoliday/createHoliday.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavBarComponent,
       HomeComponent,
-      NotFoundPageComponent
+      NotFoundPageComponent,
    ],
    imports: [
       BrowserModule,

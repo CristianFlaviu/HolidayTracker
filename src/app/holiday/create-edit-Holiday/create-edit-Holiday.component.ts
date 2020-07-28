@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Holiday } from 'src/app/_models/holiday';
 import { AuthService } from 'src/app/authentification/auth.service';
@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/authentification/auth.service';
 })
 export class CreateEditHolidayComponent implements OnInit {
   form: FormGroup;
+  @Input() formTitle: string;
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService) { }
@@ -22,6 +23,7 @@ export class CreateEditHolidayComponent implements OnInit {
   }
   get startDate(): AbstractControl {return this.form.get('startDate'); }
   get endDate(): AbstractControl {return this.form.get('endDate'); }
+
   createHoliday(): void
   {
     const holiday = new Holiday(this.startDate.value, this.endDate.value);
