@@ -5,11 +5,11 @@
       <div style="margin-left: auto;" layout-align="end center">
 
       <a *ngIf="authService.isLoggedIn() && authService.getLoggedInUser().userType === 'Admin'"style="font-size: 20px;" mat-button  [routerLink]='["/holiday/all"]'> HolidayAll </a>
-      <a *ngIf="authService.isLoggedIn()"  style="font-size: 20px;" mat-button  [routerLink]='["/holiday/colleagues"]'> Colleagues </a>
-      <a *ngIf="authService.isLoggedIn()"style="font-size: 20px;" mat-button  [routerLink]='["/holiday/edit"]'> Edit Holiday </a>
-      <a *ngIf="authService.isLoggedIn()"style="font-size: 20px;" mat-button  [routerLink]='["/holiday/create"]'> New Holiday </a>
-      <a *ngIf="!authService.isLoggedIn()"style="font-size: 20px;" mat-button  [routerLink]='["/auth/login"]'> Login </a>
-      <a *ngIf="!authService.isLoggedIn()" style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Register </a>
+      <a *ngIf="authService.isLoggedIn() "style="font-size: 20px;" mat-button  [routerLink]='["/holiday/colleagues"]'> Colleagues </a>
+      <a *ngIf="authService.isLoggedIn() "style="font-size: 20px;" mat-button  [routerLink]='["/holiday/edit"]'> Edit Holiday </a>
+      <a *ngIf="authService.isLoggedIn() "style="font-size: 20px;" mat-button  [routerLink]='["/holiday/create"]'> New Holiday </a>
+      <a *ngIf="!authService.isLoggedIn() "style="font-size: 20px;" mat-button  [routerLink]='["/auth/login"]'> Login </a>
+      <a *ngIf="!authService.isLoggedIn() "style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Register </a>
       <a  (click)="logOut()" *ngIf="authService.isLoggedIn()"  style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Logout </a>
 
       </div>
