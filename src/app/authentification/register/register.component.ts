@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 import { WorkTeams } from 'src/app/_models/workTeams.enum';
 import { User } from 'src/app/_models/user';
 import { Router } from '@angular/router';
+import {validator1} from './validator1';
 
 @Component({
   selector: 'app-register',
@@ -20,8 +21,8 @@ export class RegisterComponent implements OnInit {
               private router: Router) { }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(3)]],
+      username: ['', [ Validators.required, Validators.minLength(3)]],
+      password: ['', [validator1,Validators.required, Validators.minLength(3)]],
       team: ['', [Validators.required]],
     });
 
@@ -35,16 +36,20 @@ export class RegisterComponent implements OnInit {
   {
       const newUser = new User(this.username.value, this.password.value, this.team.value);
       if (this.authService.register(newUser))
-      {  
+      {
           this.snackBar.open('Succesfully registered ', '', {duration: 2000,
           panelClass: 'blue-snackbar'});
-        
       }
       else
       {
            this.snackBar.open('Username already exist', '', {duration: 2000,
           panelClass: 'red-snackbar'});
       }
+  }
+
+  check()
+  {
+    console.log(this.form.controls.password);
   }
 
 }
