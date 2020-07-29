@@ -5,12 +5,15 @@ import {AllHolidayListComponent} from './allHolidayList/allHolidayList.component
 import { CreateEditHolidayComponent } from './create-edit-Holiday/create-edit-Holiday.component';
 import { CreateHolidayComponent } from './createHoliday/createHoliday.component';
 import { EditHolidayComponent } from './editHoliday/editHoliday.component';
+import { ChildFullCalendarComponent } from './childFullCalendar/childFullCalendar.component';
+
 
 const routes: Routes = [{path: 'colleagues', component: HolidayListComponent },
                         {path: 'all', component: AllHolidayListComponent},
                         {path: 'create', component: CreateHolidayComponent },
-                        {path: 'edit', component: EditHolidayComponent}
-                       ];
+                        {path: 'edit', component: EditHolidayComponent},
+                        {path: 'calendar', component: ChildFullCalendarComponent}
+                      ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
