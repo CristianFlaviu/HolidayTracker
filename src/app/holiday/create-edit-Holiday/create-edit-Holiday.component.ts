@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Holiday } from 'src/app/_models/holiday';
 import { AuthService } from 'src/app/authentification/auth.service';
-
+import {StartEndValidator} from './StartEndDateValidator';
 @Component({
   selector: 'app-create-edit-Holiday',
   templateUrl: './create-edit-Holiday.component.html',
@@ -18,9 +18,9 @@ export class CreateEditHolidayComponent implements OnInit {
   ngOnInit(): void  {
     this.form = this.formBuilder.group({
       startDate: ['', [Validators.required]],
-      endDate: ['', [Validators.required]],
-    });
-  }
+      endDate: ['', [Validators.required]]}, 
+    {validator: StartEndValidator});}
+
   get startDate(): AbstractControl {return this.form.get('startDate'); }
   get endDate(): AbstractControl {return this.form.get('endDate'); }
 
@@ -29,5 +29,11 @@ export class CreateEditHolidayComponent implements OnInit {
     const holiday = new Holiday(this.startDate.value, this.endDate.value);
     this.authService.addHoliday(holiday);
 
+  }
+  
+  method2()
+  {
+  
+    console.log(this.form.controls);
   }
 }
