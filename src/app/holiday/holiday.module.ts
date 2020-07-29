@@ -20,13 +20,21 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import {CreateHolidayComponent } from './createHoliday/createHoliday.component';
 import {EditHolidayComponent} from './editHoliday/editHoliday.component';
+import {AccordionModule} from 'primeng/accordion';
+import {MenuItem} from 'primeng/api';
+
+
+import {ChildFullCalendarComponent} from './childFullCalendar/childFullCalendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
 
 @NgModule({
   declarations: [AllHolidayListComponent,
                 HolidayListComponent,
                 CreateEditHolidayComponent,
                 CreateHolidayComponent,
-                EditHolidayComponent],
+                EditHolidayComponent,
+                ChildFullCalendarComponent,
+              ],
   imports: [
     CommonModule,
     HolidayRoutingModule,
@@ -41,7 +49,11 @@ import {EditHolidayComponent} from './editHoliday/editHoliday.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    AccordionModule,
+    FullCalendarModule
+    
+
   ]
 })
 export class HolidayModule { }
