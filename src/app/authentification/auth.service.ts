@@ -62,14 +62,16 @@ public isLoggedIn(): boolean
   return (localStorage.getItem('username') != null);
 }
 
-public getLoggedInUser(): User
-{
-  return this.getUser(localStorage.getItem('username'));
-}
 public getUser(username: string): User
 {
   return this.listUser.find(a => a.username === username);
 }
+
+public getLoggedInUser(): User
+{
+  return this.getUser(localStorage.getItem('username'));
+}
+
 
 public addHoliday(holiday: Holiday): void
 {

@@ -5,12 +5,15 @@
 <p>
   <mat-form-field>
     <input type="text" matInput placeholder="username" formControlName="username">
+    <mat-error *ngIf = "username.hasError('required')">Username is required </mat-error>
+   
   </mat-form-field>
 </p>
 
 <p>
   <mat-form-field>
     <input type="password" matInput placeholder="Password" formControlName="password">
+    <mat-error *ngIf = "password.hasError('required')" >Password is required </mat-error>
   </mat-form-field>
 <!-- </p>
 
@@ -18,9 +21,9 @@
 </p> -->
 
 <div class="button">
-  <button class="button2" type="submit" mat-button routerLink="/auth/register">Register</button>
+  <button class="button2" type="submit" mat-button routerLink="/auth/register" >Register</button>
   
-  <button class="button" type="submit" mat-button form = "myform" > Login</button>
+  <button class="button" type="submit" mat-button form = "myform"  > Login</button>
  
  
  

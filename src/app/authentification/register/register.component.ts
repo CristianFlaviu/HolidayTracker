@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       username: ['', [ Validators.required, Validators.minLength(3)]],
-      password: ['', [validator1,Validators.required, Validators.minLength(3)]],
+      password: ['', [validator1, Validators.required, Validators.minLength(3)]],
       team: ['', [Validators.required]],
     });
 
@@ -39,17 +39,13 @@ export class RegisterComponent implements OnInit {
       {
           this.snackBar.open('Succesfully registered ', '', {duration: 2000,
           panelClass: 'blue-snackbar'});
+          this.router.navigate(['/auth/login']);
       }
       else
       {
            this.snackBar.open('Username already exist', '', {duration: 2000,
           panelClass: 'red-snackbar'});
       }
-  }
-
-  check()
-  {
-    console.log(this.form.controls.password);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl  } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl  } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -13,16 +13,24 @@ import { WorkTeams } from 'src/app/_models/workTeams.enum';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
+  form: FormGroup;
+
   constructor(private authService: AuthService,
               private snackBar: MatSnackBar,
-              private router: Router) { }
+              private router: Router,
+              private formBuilder: FormBuilder) { }
   ngOnInit(): void {
-    const devType = WorkTeams.Dev;
+    this.form = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
+
+
     }
+
+  get username(): AbstractControl {return this.form.get('username'); }
+  get password(): AbstractControl {return this.form.get('password'); }
+
   login(): void
   {
     if (this.authService.login(this.form.value.username, this.form.value.password))

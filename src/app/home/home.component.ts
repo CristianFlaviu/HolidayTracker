@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../authentification/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authSerice: AuthService) {
 
-  ngOnInit() {
+    console.log(authSerice.listUser);
+  }
+
+  ngOnInit(): void{
   }
 
 }

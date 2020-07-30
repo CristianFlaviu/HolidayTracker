@@ -7,8 +7,6 @@ export function validator1 (control: AbstractControl)
         const value: string = control.value;
         const regexNumber = /\d/;
         const regexBigLetter = new RegExp('[A-Z]');
-
-        console.log(regexNumber, regexBigLetter);
         if (!regexNumber.test(value) || !regexBigLetter.test(value))
         {return{
             isError: true

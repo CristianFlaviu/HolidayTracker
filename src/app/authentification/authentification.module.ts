@@ -28,6 +28,6 @@ import { EnumToStringPipe } from './enumToString.pipe';
     MatSnackBarModule,
     MatSelectModule
   ],
-  providers: [AuthService,]
+  providers: []
 })
 export class AuthentificationModule { }
