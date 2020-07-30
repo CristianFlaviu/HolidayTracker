@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { Holiday } from 'src/app/_models/holiday';
 import { AuthService } from 'src/app/authentification/auth.service';
 import {StartEndValidator} from './StartEndDateValidator';
+import { SnackbarService } from 'src/app/snackbar.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-edit-Holiday',
   templateUrl: './create-edit-Holiday.component.html',
@@ -11,9 +13,11 @@ import {StartEndValidator} from './StartEndDateValidator';
 export class CreateEditHolidayComponent implements OnInit {
   form: FormGroup;
   @Input() formTitle: string;
-
-  constructor(private formBuilder: FormBuilder,
-              private authService: AuthService) { }
+  @Input() displayButton;
+   constructor(private formBuilder: FormBuilder,
+               private authService: AuthService,
+               private snackBar: SnackbarService,
+               private route: Router) { }
 
   ngOnInit(): void  {
     this.form = this.formBuilder.group({
@@ -30,10 +34,16 @@ export class CreateEditHolidayComponent implements OnInit {
     this.authService.addHoliday(holiday);
 
   }
-  
-  method2()
+  deleteHoliday(): void
   {
-  
-    console.log(this.form.controls);
+    if (this.authService.deleteHoliday()){
+      this.snackBar.message('Holiday deleted ! GET BACK TO WORK' );
+      this.route.navigate(['/home']);
+    }
+    else
+    {
+      this.snackBar.error('You dont have a Holiday scheduled yet');
+    }
+    
   }
 }

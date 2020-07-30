@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class EditHolidayComponent implements OnInit {
 
   constructor() { }
-
+  displayButtonParent = {display: 'inline'};
   ngOnInit() {
   }
 

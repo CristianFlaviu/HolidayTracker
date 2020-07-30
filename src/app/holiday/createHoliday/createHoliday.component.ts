@@ -9,6 +9,7 @@ import {CreateEditHolidayComponent} from '../create-edit-Holiday/create-edit-Hol
 export class CreateHolidayComponent implements OnInit {
 
   formParentTitle = 'Create Holiday';
+  displayButtonParent = {display: 'none'};
   constructor() { }
 
   ngOnInit(): void {

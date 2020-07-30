@@ -80,4 +80,14 @@ public addHoliday(holiday: Holiday): void
   holiday.user = user;
 }
 
+public deleteHoliday(): boolean
+{
+  const user = this.getLoggedInUser();
+  if (user.holiday === null)
+  {
+      return false;
+  }
+  user.holiday = null;
+  return true;
+}
 }
