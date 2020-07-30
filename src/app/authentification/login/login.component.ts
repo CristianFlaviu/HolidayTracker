@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   {
     if (this.authService.login(this.form.value.username, this.form.value.password))
       {
-          this.snackBar.open('Succesfully registered ', '', {duration: 2000,
+          this.snackBar.open('Succesfully LoggedIn ', '', {duration: 2000,
                           panelClass: 'blue-snackbar'});
 
           this.router.navigate(['/home']);
