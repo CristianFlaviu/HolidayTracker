@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {EnumToStringPipe } from './authentification/enumToString.pipe';
 import {CreateHolidayComponent} from './holiday/createHoliday/createHoliday.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
    declarations: [
@@ -30,7 +31,8 @@ import {CreateHolidayComponent} from './holiday/createHoliday/createHoliday.comp
       MatButtonModule,
       MatIconModule,
       MatCardModule,
-      MatFormFieldModule
+      MatFormFieldModule,
+      MatSnackBarModule
    ],
    providers: [],
    bootstrap: [
