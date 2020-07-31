@@ -14,10 +14,13 @@ export class CreateEditHolidayComponent implements OnInit {
   form: FormGroup;
   @Input() formTitle: string;
   @Input() displayButton;
+  @Input() childmessage: string;
+  @Input() buttonName: string;
    constructor(private formBuilder: FormBuilder,
                private authService: AuthService,
                private snackBar: SnackbarService,
-               private route: Router) { }
+               private route: Router,
+               ) { }
 
   ngOnInit(): void  {
     this.form = this.formBuilder.group({
@@ -32,6 +35,8 @@ export class CreateEditHolidayComponent implements OnInit {
   {
     const holiday = new Holiday(this.startDate.value, this.endDate.value);
     this.authService.addHoliday(holiday);
+    this.snackBar.message(this.childmessage);
+    this.route.navigate(['/holiday/colleagues']);
 
   }
   deleteHoliday(): void

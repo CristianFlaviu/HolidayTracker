@@ -10,8 +10,15 @@
       <a *ngIf="authService.isLoggedIn() "style="font-size: 20px;" mat-button  [routerLink]='["/holiday/create"]'> New Holiday </a>
       <a *ngIf="!authService.isLoggedIn() "style="font-size: 20px;" mat-button  [routerLink]='["/auth/login"]'> Login </a>
       <a *ngIf="!authService.isLoggedIn() "style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Register </a>
-      <a  (click)="logOut()" *ngIf="authService.isLoggedIn()"  style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Logout </a>
+    
+        
+      <a *ngIf="authService.isLoggedIn()" style="font-size: 20px;background-color:cornflowerblue;" mat-button [matMenuTriggerFor]="animals"><i class="material-icons">account_circle  &nbsp;</i>{{ authService.getLoggedInUser()?.username}} </a>
+      <mat-menu  #animals="matMenu">
+        <a  (click)="logOut()" *ngIf="authService.isLoggedIn()"  style="font-size: 20px;"mat-button [routerLink]='["/auth/register"]'> Logout </a>
+      </mat-menu>
 
       </div>
      </mat-toolbar>
+
+    
   </div>

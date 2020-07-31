@@ -13,10 +13,10 @@ constructor() { }
 
 
 public IoanaHoliday = new  Holiday(new Date(2020, 7, 20), new Date(2020, 7,  29));
-public TonyHoliday = new  Holiday(new Date(2020, 7, 21), new Date(2020, 7,  21));
+public TonyHoliday = new  Holiday(new Date(2020, 7, 5), new Date(2020, 7,  21));
 
 
-public listUser: User[] = [new User('Tony','123',  null, null , this.TonyHoliday),
+public listUser: User[] = [new User('Tony','123',UserTypes.Admin , null, this.TonyHoliday),
                     new User('Flaviu', '123'),
                     new User('Ema', '123'),
                     new User('Ioana', '123', UserTypes.NormalUser, WorkTeams.Hr, this.IoanaHoliday)];

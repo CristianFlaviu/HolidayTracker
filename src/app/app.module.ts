@@ -12,10 +12,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {EnumToStringPipe } from './authentification/enumToString.pipe';
-import {CreateHolidayComponent} from './holiday/createHoliday/createHoliday.component';
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HolidayModule } from './holiday/holiday.module';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
    declarations: [
@@ -35,6 +35,7 @@ import { HolidayModule } from './holiday/holiday.module';
       MatFormFieldModule,
       MatSnackBarModule,
       HolidayModule,
+      MatMenuModule
    ],
    providers: [],
    bootstrap: [

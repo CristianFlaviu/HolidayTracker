@@ -27,7 +27,7 @@
         
     <div class="button" >
 
-      <button type="submit" mat-button form="idform" style="margin-left: 20%;" (click)="createHoliday()" [disabled]="form.invalid" >Create</button>
+      <button type="submit" mat-button form="idform" style="margin-left: 20%;" (click)="createHoliday()" [disabled]="form.invalid" > {{buttonName}}</button>
       <button type="reset" [style]='displayButton'  style="margin-left: 10%;" mat-button  (click) ="deleteHoliday()"  >Delete Holiday</button>
      
       <mat-error *ngIf="form.controls.endDate.hasError('isError')">Wrong dates selected</mat-error>

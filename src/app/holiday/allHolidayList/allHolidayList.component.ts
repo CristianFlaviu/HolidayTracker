@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/authentification/auth.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import {ChildFullCalendarComponent} from '../childFullCalendar/childFullCalendar.component';
 
 @Component({
   selector: 'app-allHolidayList',
